@@ -1,0 +1,31 @@
+<div
+  class="w-full bg-slate-200 h-screen bg-sughero bg-cover mt-[10vh] flex items-center justify-center"
+>
+  <div
+    class="h-auto p-5 w-1/2 bg-white rounded-2xl border-2 border-black flex flex-col md:flex-row items-center justify-center gap-9"
+    *ngIf="newDrink.length > 0"
+  >
+    <img
+      class="h-[80vh] md:h-[40vh] rounded-2xl border-2 border-black"
+      [src]="drink.drinks[0].strDrinkThumb"
+      alt=""
+    />
+    <div
+      class="rounded-2xl h-full flex flex-col justify-center items-start gap-5"
+    >
+      <h3 class="text-3xl font-semibold">{{ drink.drinks[0].strDrink }}</h3>
+      <ul>
+        <li class="text-black text-xl" *ngFor="let item of newDrink">
+          {{ item.strIngredient }} - {{ item.strMeasure1 }}
+          <img
+            src="https://www.thecocktaildb.com/images/ingredients/{{
+              item.strIngredient
+            }}.png"
+            alt=""
+            class="h-14 w-14"
+          />
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
